@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111195353) do
+ActiveRecord::Schema.define(version: 20171111213139) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,8 +35,12 @@ ActiveRecord::Schema.define(version: 20171111195353) do
     t.text     "comment"
     t.boolean  "status"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "video_attachment_file_name"
+    t.string   "video_attachment_content_type"
+    t.integer  "video_attachment_file_size"
+    t.datetime "video_attachment_updated_at"
     t.index ["user_id"], name: "index_videos_on_user_id"
   end
 
